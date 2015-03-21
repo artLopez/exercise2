@@ -9,9 +9,21 @@ import org.junit.runners.JUnit4;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
+import org.junit.Before;
 
 public class AppTest {
+    private List<String> names;
 
+    @Before
+    public void setUp(){
+	this.names = new ArrayList<String>;
+	names.add("a");
+        names.add("b");
+        names.add("c");
+        names.add("d");
+        names.add("e");
+        names.add("f");
+    }
     @Test
     public void thisAlwaysPasses() {
 
@@ -20,6 +32,12 @@ public class AppTest {
     @Test
     @Ignore
     public void thisIsIgnored() {
+    }
+
+    @Test
+    public void groupSize(){
+           App generator = new App(this.names);
+
     }
 
     @Test
