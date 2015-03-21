@@ -6,6 +6,9 @@ import org.junit.Test;
 import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class AppTest {
 
@@ -28,7 +31,7 @@ public class AppTest {
         names.add("d");
         names.add("e");
         names.add("f");
-        Generator generator = new App(names);
+        App generator = new App(names);
         List<String> group = generator.createGroup("a");
         assertEquals(group.size(), 3);
     }
@@ -42,7 +45,7 @@ public class AppTest {
         names.add("d");
         names.add("e");
         names.add("f");
-        Generator generator = new App(names);
+        App generator = new App(names);
         String name = "a";
         List<String> group = generator.createGroup(name);
         assertEquals(group.contains(name), true);
@@ -57,7 +60,7 @@ public class AppTest {
         names.add("d");
         names.add("e");
         names.add("f");
-        Generator generator = new App(names);
+        App generator = new App(names);
         List<String> actualA = generator.createGroup("a");
         List<String> actualB = generator.createGroup("b");
         List<String> actualC = generator.createGroup("c");
