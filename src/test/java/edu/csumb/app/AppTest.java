@@ -37,8 +37,8 @@ public class AppTest {
     @Test
     public void groupSize(){
            App generator = new App(this.names);
-	  // ArrayList<ArrayList<String>> groups = generator.createSubgroups();
-          // assertEquals(groups.size(),1);
+	   ArrayList<ArrayList<String>> groups = generator.createSubgroups();
+           assertEquals(groups.size(),1);
     }
     
 
