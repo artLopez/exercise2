@@ -12,7 +12,7 @@ public class App
     public App(List<String> names){
         this.names = names;
     }
-    public ArrayList<ArrayList<String>> createSubgroups() {
+    public ArrayList<ArrayList<String>> createSubgroups(){
         ArrayList<ArrayList<String>> groups = new ArrayList<>();
         ArrayList<String> tmpGroup = new ArrayList<>();
         for (String name: this.names) {

@@ -13,10 +13,10 @@ import org.junit.Before;
 
 public class AppTest {
     private List<String> names;
-
+    /*
     @Before
     public void setUp(){
-	this.names = new ArrayList<String>;
+	this.names = new ArrayList<String>();
 	names.add("a");
         names.add("b");
         names.add("c");
@@ -24,25 +24,26 @@ public class AppTest {
         names.add("e");
         names.add("f");
     }
+	*/
     @Test
     public void thisAlwaysPasses() {
-
     }
 
     @Test
     @Ignore
     public void thisIsIgnored() {
     }
-
+    /*
     @Test
     public void groupSize(){
            App generator = new App(this.names);
 	   ArrayList<ArrayList<String>> groups = generator.createSubgroups();
            assertEquals(groups.size(),1);
     }
+    */
 
     @Test
-    public void groupsHaveThreePeople() {
+    public void groupsHaveThreePeople() throws Exception {
         List<String> names = new ArrayList<String>();
         names.add("a");
         names.add("b");
@@ -56,7 +57,7 @@ public class AppTest {
     }
 
     @Test
-    public void givenUsernameIsInGroup() {
+    public void givenUsernameIsInGroup() throws Exception{
         List<String> names = new ArrayList<String>();
         names.add("a");
         names.add("b");
@@ -71,7 +72,7 @@ public class AppTest {
     }
 
     @Test
-    public void groupsHaveConsistentMembership() {
+    public void groupsHaveConsistentMembership() throws Exception{
         List<String> names = new ArrayList<String>();
         names.add("a");
         names.add("b");
@@ -90,5 +91,35 @@ public class AppTest {
         assertEquals(actualA, expected);
         assertEquals(actualB, expected);
         assertEquals(actualC, expected);
+    }
+    @Test
+    public void createSubgroups() {
+        List<String> names = new ArrayList<String>();
+        names.add("a");
+        names.add("b");
+        names.add("c");
+        names.add("d");
+        names.add("e");
+        names.add("f");
+        App  generator = new App(names);
+        ArrayList<ArrayList<String>> groups = generator.createSubgroups();
+        assertEquals(groups.size(), 2);
+        assertEquals(groups.get(0).size(), 3);
+    }
+
+    @Test
+    public void findGroup() {
+        List<String> names = new ArrayList<String>();
+        names.add("a");
+        names.add("b");
+        names.add("c");
+        names.add("d");
+        names.add("e");
+        names.add("f");
+        App  generator = new App(names);
+        ArrayList<ArrayList<String>> groups = generator.createSubgroups();
+        String name = "a";
+        ArrayList<String> group = generator.findGroup(groups, name);
+        assertEquals(group.contains(name), true);
     }
 }

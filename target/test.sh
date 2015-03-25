@@ -12,3 +12,4 @@ actual   = `java -cp test-1.0-SNAPSHOT.jar edu.csumb.app.App arlopez@csumb.edu 2
 expected = "[mcockman@csumb.edu, arlopez@csumb.edu, agopar@csumb.edu]"
 
 assert "$actual" "$expected"
+
