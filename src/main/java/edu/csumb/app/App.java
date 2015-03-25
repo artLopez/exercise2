@@ -7,6 +7,7 @@ import java.util.List;
 
 public class App
 {
+    //refactored code
     List<String> names;
 
     public App(List<String> names){
