@@ -13,7 +13,7 @@ import org.junit.Before;
 
 public class AppTest {
     private List<String> names;
-    /*
+    
     @Before
     public void setUp(){
 	this.names = new ArrayList<String>();
@@ -24,33 +24,19 @@ public class AppTest {
         names.add("e");
         names.add("f");
     }
-	*/
-    @Test
-    public void thisAlwaysPasses() {
-    }
-
-    @Test
-    @Ignore
-    public void thisIsIgnored() {
-    }
-    /*
+	
+    
     @Test
     public void groupSize(){
            App generator = new App(this.names);
 	   ArrayList<ArrayList<String>> groups = generator.createSubgroups();
-           assertEquals(groups.size(),1);
+           assertEquals(groups.size(),2);
     }
-    */
+   
 
     @Test
     public void groupsHaveThreePeople() throws Exception {
-        List<String> names = new ArrayList<String>();
-        names.add("a");
-        names.add("b");
-        names.add("c");
-        names.add("d");
-        names.add("e");
-        names.add("f");
+       
         App generator = new App(names);
         List<String> group = generator.createGroup("a");
         assertEquals(group.size(), 3);
@@ -58,13 +44,7 @@ public class AppTest {
 
     @Test
     public void givenUsernameIsInGroup() throws Exception{
-        List<String> names = new ArrayList<String>();
-        names.add("a");
-        names.add("b");
-        names.add("c");
-        names.add("d");
-        names.add("e");
-        names.add("f");
+   
         App generator = new App(names);
         String name = "a";
         List<String> group = generator.createGroup(name);
@@ -73,13 +53,7 @@ public class AppTest {
 
     @Test
     public void groupsHaveConsistentMembership() throws Exception{
-        List<String> names = new ArrayList<String>();
-        names.add("a");
-        names.add("b");
-        names.add("c");
-        names.add("d");
-        names.add("e");
-        names.add("f");
+   
         App generator = new App(names);
         List<String> actualA = generator.createGroup("a");
         List<String> actualB = generator.createGroup("b");
@@ -94,13 +68,7 @@ public class AppTest {
     }
     @Test
     public void createSubgroups() {
-        List<String> names = new ArrayList<String>();
-        names.add("a");
-        names.add("b");
-        names.add("c");
-        names.add("d");
-        names.add("e");
-        names.add("f");
+   
         App  generator = new App(names);
         ArrayList<ArrayList<String>> groups = generator.createSubgroups();
         assertEquals(groups.size(), 2);
@@ -109,13 +77,7 @@ public class AppTest {
 
     @Test
     public void findGroup() {
-        List<String> names = new ArrayList<String>();
-        names.add("a");
-        names.add("b");
-        names.add("c");
-        names.add("d");
-        names.add("e");
-        names.add("f");
+      
         App  generator = new App(names);
         ArrayList<ArrayList<String>> groups = generator.createSubgroups();
         String name = "a";
